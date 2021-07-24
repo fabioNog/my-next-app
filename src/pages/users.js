@@ -10,10 +10,17 @@ export default function Users(){
         setUsers(data);
     }
 
-    console.log(users);
+    
 
     useEffect(() => {
         fetchUsers();
-    },[])
-    return <h1>First</h1>;  
+    },[]);
+    console.log(users);
+    return (
+        <div>
+            {users.map((user) => {
+                <p>{user.name}</p>
+            })}
+        </div>
+    );  
 }
